@@ -1,0 +1,19 @@
+{
+  "name": "sort-stream",
+  "description": "like array.sort, except it's a stream",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dominictarr/sort-stream",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/sort-stream.git"
+  },
+  "dependencies": {
+    "through": "~2.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
