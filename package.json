@@ -1,7 +1,7 @@
 {
   "name": "sort-stream",
   "description": "like array.sort, except it's a stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/dominictarr/sort-stream",
   "repository": {
     "type": "git",
