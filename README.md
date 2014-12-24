@@ -11,6 +11,9 @@ input.pipe(sort(function (a, b) {
 })).pipe(output)
 ```
 
+see also: [sort-stream2](https://github.com/jed/sort-stream2)
+(samething, but with streams2)
+
 ## License
 
 MIT
