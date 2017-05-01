@@ -1,13 +1,17 @@
+var through = require("through2")
 
-var through = require('through')
+module.exports = function(fn) {
+  var arr = []
 
+  return through.obj(transform, flush)
 
-module.exports = function (comp) {
-  var a = []
-  return through(function (data) {
-    a.push(data)
-  }, function () {
-    a.sort(comp).forEach(this.queue)
-    this.queue(null)
-  })
+  function transform(data, enc, cb) {
+    arr.push(data)
+    cb()
+  }
+
+  function flush(cb) {
+    arr.sort(fn).forEach(this.push, this)
+    cb()
+  }
 }

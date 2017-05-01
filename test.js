@@ -1,17 +1,24 @@
+var assert = require("assert")
+var through = require("through2")
+var concat = require("concat-stream")
+var sort = require("./")
 
+var rs = through.obj()
+var arr = Array
+  .apply(null, Array(100))
+  .map(function(){ return {n: Math.random()} })
 
-var sort = require('./')
+var compare = function (a, b){ return a.n - b.n }
+var before = arr.slice(0).sort(compare)
 
-var ss = sort(function (a, b) {
-  return a - b
-})
+arr.forEach(rs.write, rs)
 
-ss.on('data', console.log)
+rs
+  .pipe(sort(compare))
+  .pipe(concat(onSorted))
 
-var l = 100
-while(l--)
-  ss.write(Math.random())
+rs.end()
 
-ss.end()
-
-
+function onSorted(after) {
+  assert.deepEqual(before, after)
+}

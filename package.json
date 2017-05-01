@@ -7,13 +7,15 @@
     "type": "git",
     "url": "git://github.com/dominictarr/sort-stream.git"
   },
-  "dependencies": {
-    "through": "~2.3.1"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "node test.js"
   },
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "concat-stream": "^1.4.7"
+  }
 }
